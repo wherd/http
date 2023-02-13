@@ -99,4 +99,9 @@ class Router
     {
         return $this->addRoute('DELETE', $path, $callback);
     }
+
+    public function __invoke(Request $request, Response $response): ?Response
+    {
+        return $this->dispatch($request, $response);
+    }
 }
